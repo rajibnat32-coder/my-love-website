@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Girlfriend Day</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- side navigation dots -->
+<nav class="dot-nav" aria-label="Section navigation">
+  <button class="dot active" data-target="welcome" aria-label="Go to Welcome"></button>
+  <button class="dot" data-target="envelope" aria-label="Go to Open the Envelope"></button>
+  <button class="dot" data-target="letter" aria-label="Go to Love Letter"></button>
+  <button class="dot" data-target="memories" aria-label="Go to Our Memories"></button>
+  <button class="dot" data-target="reasons" aria-label="Go to Reasons I Love You"></button>
+  <button class="dot" data-target="finale" aria-label="Go to The Finale"></button>
+</nav>
+
+<!-- floating hearts layer, populated by JS -->
+<div class="floating-hearts" id="floatingHearts" aria-hidden="true"></div>
+
+<main id="scroller">
+
+  <!-- ============ SECTION 1 : WELCOME ============ -->
+  <section class="panel" id="welcome">
+
+    <!-- Your Photo -->
+    
+    <div class="stars" id="stars1" aria-hidden="true"></div>
+    <div class="shooting-star s1" aria-hidden="true"></div>
+    <div class="shooting-star s2" aria-hidden="true"></div>
+    <div class="moon" aria-hidden="true"></div>
+
+    <button class="music-toggle" id="musicToggle" aria-pressed="false">
+        <span class="note-icon">♪</span>
+        <span class="music-label">Play Music</span>
+    </button>
+
+    <div class="skyline" aria-hidden="true"></div>
+
+    <div class="panel-inner welcome-inner">
+        <p class="eyebrow">Our Story <span class="heart-glyph">♥</span></p>
+        <h1 class="script-xl">Happy<br>Girlfriend Day</h1>
+        <p class="subtitle">
+            You make every moment beautiful.<br>
+            I'm so lucky to have you in my life.
+        </p>
+        <button class="cta-btn" data-scroll-next>
+            Begin Our Story <span class="heart-glyph">♥</span>
+        </button>
+    </div>
+
+    <p class="panel-tag">01 — Welcome</p>
+
+</section>
+
+  
+  <!-- ============ SECTION 2 : LOVE LETTER ============ -->
+  <section class="panel" id="letter">
+    <div class="petals slow" id="petals3" aria-hidden="true"></div>
+
+    <div class="panel-inner letter-inner">
+      <p class="script-md letter-title">Love Letter <span class="heart-glyph">♥</span></p>
+
+      <div class="parchment">
+        <div class="rose corner-tr" aria-hidden="true"></div>
+        <div class="rose corner-bl" aria-hidden="true"></div>
+        <div class="letter-text">
+  <p>Dear Ritu,</p>
+
+  <p>
+    Happy Girlfriend Day! 
+    <span class="heart-glyph small">♥</span>
+  </p>
+
+  <p>
+    I wanted to take a moment today to remind you just how much you mean to me.
+    Life gets busy, but having you by my side makes every single day brighter,
+    easier, and so much more fun.
+  </p>
+
+  <p>
+    Thank you for your warm heart, your laughter, and for always being my go-to person.
+    I love the memories we’ve made together, and I can't wait for all the adventures
+    still ahead of us.
+  </p>
+
+  <p>
+    You deserve to be celebrated today and every day.
+    <span class="heart-glyph small">♥</span>
+  </p>
+
+  <p class="signoff">
+     Your,<br>
+    <strong>Rajib</strong> 
+    <span class="heart-glyph small">♥</span>
+  </p>
+</div>
+
+      <!-- mini music player -->
+      <div class="player-bar">
+        <div class="album-art">♪</div>
+        <div class="track-info">
+          <p class="track-name" id="trackName">Our Song</p>
+          <p class="track-artist" id="trackArtist">Add your track</p>
+        </div>
+        <div class="player-controls">
+          <button class="player-btn" id="prevBtn" aria-label="Previous track">⏮</button>
+          <button class="player-btn play" id="playBtn" aria-label="Play or pause">▶</button>
+          <button class="player-btn" id="nextBtn" aria-label="Next track">⏭</button>
+          <button class="player-btn" id="volBtn" aria-label="Mute or unmute">🔊</button>
+        </div>
+      </div>
+      <audio id="bgAudio" src="assets/music.mp3" loop preload="auto"></audio>
+    </div>
+
+    <p class="panel-tag">02 — Love Letter</p>
+  </section>
+
+
+  <!-- ============ SECTION 3 : REASONS I LOVE YOU ============ -->
+  <section class="panel" id="reasons">
+    <div class="panel-inner reasons-inner">
+      <p class="script-md">Reasons I Love You <span class="heart-glyph">♥</span></p>
+      <p class="subtitle small">Just a few reasons... there are many more!</p>
+
+      <div class="reason-grid" id="reasonGrid">
+        <!-- cards injected by JS -->
+      </div>
+
+      <div class="reason-dots" id="reasonDots"></div>
+    </div>
+
+    <p class="panel-tag">03 — Reasons I Love You</p>
+  </section>
+
+  <!-- ============ SECTION 4 : THE FINALE ============ -->
+  <section class="panel" id="finale">
+    <canvas id="fireworks" aria-hidden="true"></canvas>
+
+    <div class="panel-inner finale-inner">
+      <div class="neon-heart">
+        <svg viewBox="0 0 300 270" class="heart-svg" aria-hidden="true">
+          <path d="M150 260 C 20 170, -10 70, 60 25 C 105 -5, 145 15, 150 55 C 155 15, 195 -5, 240 25 C 310 70, 280 170, 150 260 Z" />
+        </svg>
+        <div class="neon-text">
+          <p class="script-lg">I Love You</p>
+          <p class="finale-sub">Happy Girlfriend Day</p>
+          <div class="hairline"></div>
+          <p class="finale-forever">Forever &amp; Always</p>
+        </div>
+      </div>
+
+      <button class="cta-btn glow" id="thankYouBtn">Thank You For Everything <span class="heart-glyph">♥</span></button>
+    </div>
+
+    <p class="panel-tag">04 — The Finale</p>
+  </section>
+
+</main>
+
+<!-- photo grid modal -->
+<div class="modal-overlay" id="photoModal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <p class="script-md">All Our Photos <span class="heart-glyph">♥</span></p>
+    <div class="modal-grid" id="modalGrid"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
